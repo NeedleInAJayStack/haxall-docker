@@ -4,11 +4,15 @@ This contains a dockerfile that generates Haxall docker images.
 
 ## Usage:
 
-To run an image, run:
+To pull and run an image, run:
 
 ```bash
-docker run -p 8080:8080 -v ~/haxall/proj:/opt/haxall/proj -e "SU_PASS=changeme" haxall-docker
+docker pull needleinajaystack/haxall:latest
+docker run -p 8080:8080 -v ~/haxall/proj:/opt/haxall/proj -e "SU_PASS=CHANGEME" needleinajaystack/haxall:latest
 ```
+
+This image serves Haxall from port 8080, and expects a volume mount at `/opt/haxall/proj` to persist data across
+container runs.
 
 ### Data Persistence
 
@@ -29,6 +33,16 @@ The environment variables below are only used when initializing new projects:
 To build, run:
 
 ```bash
-docker build --tag haxall-docker .
+docker build .
 ```
 
+## Publishing
+
+This repo is published at https://hub.docker.com/repository/docker/needleinajaystack/haxall
+
+To publish a new version, tag it and release it:
+
+```bash
+docker tag $image_id needleinajaystack/haxall:$version
+docker push needleinajaystack/haxall:$version
+```
