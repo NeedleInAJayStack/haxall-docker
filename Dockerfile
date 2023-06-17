@@ -3,7 +3,7 @@ ARG JDK_VERSION=17
 FROM eclipse-temurin:$JDK_VERSION
 
 ARG HAXALL_DL_URL=https://github.com/haxall/haxall/releases/download/
-ARG HAXALL_VERSION=3.1.7
+ARG HAXALL_VERSION=3.1.8
 
 WORKDIR /opt
 
