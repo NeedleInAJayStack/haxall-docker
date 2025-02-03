@@ -40,9 +40,4 @@ docker build .
 
 This repo is published at https://hub.docker.com/repository/docker/needleinajaystack/haxall
 
-To publish a new version, build it, tag it, and release it:
-
-```bash
-docker build -t needleinajaystack/haxall:$version .
-docker push needleinajaystack/haxall:$version
-```
+To publish a new version, simply tag this repo.
