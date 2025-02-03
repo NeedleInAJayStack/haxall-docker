@@ -1,0 +1,11 @@
+services:
+  haxall:
+    build:
+      context: .
+    environment:
+      - SU_USER=su
+      - SU_PASS=su
+    ports:
+      - 8080:8080/tcp
+    volumes:
+      - ~/haxall/proj:/opt/haxall/proj
